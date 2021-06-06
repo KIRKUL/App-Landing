@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+
+// === Mixin ===
+@mixin roboto {
+    font-family: 'Roboto', sans-serif;
+}
+@mixin quicsand {
+    font-family: 'Quicksand', sans-serif;
+}
+
+// ===/ Mixin ===
+
+// === Variable ===
+
+
+body{}
