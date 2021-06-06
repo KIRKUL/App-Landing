@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
 
-// === Mixin ===
+// === MIXIN ===
 @mixin roboto {
     font-family: 'Roboto', sans-serif;
 }
@@ -9,9 +9,78 @@
     font-family: 'Quicksand', sans-serif;
 }
 
-// ===/ Mixin ===
+// ===/ MIXIN ===
 
-// === Variable ===
+// === VARIABLE ===
+$fw-regular: 400;
+$fw-bold: 500;
+$fw-medium: 700;
+
+// ===/ VARIABLE ===
 
 
-body{}
+// === COMMON ===
+
+body{
+    @include roboto;
+}
+.wrapper-outer{}
+
+.wrapper-inner {
+    max-width: 900px;
+    margin: 0 auto;
+
+    &--wide{
+        max-width: 1200px;
+    }
+}
+// ===/ COMMON ===
+
+// === HEADER ===
+.section-header{}
+// === /HEADER ===
+
+// === HERO-IMAGE ===
+.section-hero-image{}
+
+// === /HERO-IMAGE ===
+
+// === CUSTOMERS ===
+.section-customers{}
+// === /CUSTOMERS ===
+
+// === PLAN-AND-MANAGE ===
+.section-plan-and-manage{}
+// === /PLAN-AND-MANAGE ===
+
+// === FEATURES ===
+.section-features{}
+// === /FEATURES ===
+
+// === STATS ===
+.section-stats{}
+// === /STATS ===
+
+// === BLOG ===
+.section-blog{}
+// === /BLOG ===
+
+// === QOUTES ===
+.section-quotes{}
+// === /QOUTES ===
+
+// === FAQ ===
+.section-faq{}
+// === /FAQ ===
+
+// === GET-STARTED ===
+.section-get-started{}
+// === /GET-STARTED ===
+
+// === NEWSLETTER ===
+.section-newsletter{}
+// === /NEWSLETTER ===
+
+//=== FOOTER ===
+.section-footer{}
+//=== /FOOTER ===
