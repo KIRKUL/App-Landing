@@ -5,7 +5,7 @@
 @mixin roboto {
     font-family: 'Roboto', sans-serif;
 }
-@mixin quicsand {
+@mixin quicksand {
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -13,9 +13,13 @@
 
 // === VARIABLE ===
 $fw-regular: 400;
-$fw-bold: 500;
-$fw-medium: 700;
+$fw-medium: 500;
+$fw-bold: 700;
 
+$padding-vertical-xs:20px;
+$padding-vertical-sm:60px;
+$padding-vertical:120px;
+$color-divider:#d8e3fe;
 // ===/ VARIABLE ===
 
 
@@ -24,11 +28,15 @@ $fw-medium: 700;
 body{
     @include roboto;
 }
-.wrapper-outer{}
+.section-outer {
+    border-bottom: 1px solid $color-divider;
+}
 
-.wrapper-inner {
+.section-inner {
     max-width: 900px;
     margin: 0 auto;
+padding-top: $padding-vertical;
+padding-bottom: $padding-vertical;
 
     &--wide{
         max-width: 1200px;
@@ -37,20 +45,36 @@ body{
 // ===/ COMMON ===
 
 // === HEADER ===
-.section-header{}
+.section-header{
+    .section-inner{
+        padding-top: $padding-vertical-xs;
+        padding-bottom: $padding-vertical-xs;
+
+    }
+}
 // === /HEADER ===
 
 // === HERO-IMAGE ===
-.section-hero-image{}
+.section-hero-image{
+    background-color: #f4f2ff;
+}
 
 // === /HERO-IMAGE ===
 
 // === CUSTOMERS ===
-.section-customers{}
+.section-customers{
+    .section-inner{
+        padding-top: $padding-vertical-sm;
+        padding-bottom: $padding-vertical-sm;
+
+    }
+}
 // === /CUSTOMERS ===
 
 // === PLAN-AND-MANAGE ===
-.section-plan-and-manage{}
+.section-plan-and-manage{
+    background-color: #f5f8ff;
+}
 // === /PLAN-AND-MANAGE ===
 
 // === FEATURES ===
@@ -58,15 +82,27 @@ body{
 // === /FEATURES ===
 
 // === STATS ===
-.section-stats{}
+.section-stats {
+    background-color: #e9EFFF;
+    .section-inner{
+    padding-top: $padding-vertical-sm;
+    padding-bottom: $padding-vertical-sm;
+
+}
+
+}
 // === /STATS ===
 
 // === BLOG ===
-.section-blog{}
+.section-blog{
+    background-color: #f5f8ff;
+}
 // === /BLOG ===
 
 // === QOUTES ===
-.section-quotes{}
+.section-quotes{
+    background-color: #eaf0ff;
+}
 // === /QOUTES ===
 
 // === FAQ ===
@@ -74,13 +110,23 @@ body{
 // === /FAQ ===
 
 // === GET-STARTED ===
-.section-get-started{}
+.section-get-started{
+    background-color: #6888ff;
+}
 // === /GET-STARTED ===
 
 // === NEWSLETTER ===
-.section-newsletter{}
+.section-newsletter{
+    background-color: #fcfdff;
+}
 // === /NEWSLETTER ===
 
 //=== FOOTER ===
-.section-footer{}
+.section-footer{
+    border-bottom: 0;
+    .section-inner{
+        padding-top: $padding-vertical-sm;
+        padding-bottom: $padding-vertical-sm;
+    }
+}
 //=== /FOOTER ===

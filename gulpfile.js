@@ -1,11 +1,11 @@
-const{src,dest,watch} = requirel('gulp');
-const sass = requirel('gulp-saas');
-const browserSync = requirel('browser-sync').create();
-const gulpStyleint = requirel('gulp-styleint');
+const{ src, dest, watch} = require('gulp');
+const sass = require('gulp-sass');
+const browserSync = require('browser-sync').create();
+const gulpStylelint = require('gulp-stylelint');
 
-function style(){
+function style() {
     return src('./css/**/*.scss')
-    .pipe(gulpStyleint({
+    .pipe(gulpStylelint({
         reporters: [
             {
                 formatter:'string',
@@ -25,7 +25,7 @@ function watcher(){
         }
     });
     watch('./css/**/*.scss', style);
-watch('./*html').on('change', browserSync.reload);
+watch('./*.html').on('change', browserSync.reload);
 watch('./js/**/*.js').on('change',browserSync.reload);
 }
 exports.style = style;

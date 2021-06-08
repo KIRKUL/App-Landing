@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap");
+body {
+  font-family: 'Roboto', sans-serif; }
+
+.section-outer {
+  border-bottom: 1px solid #d8e3fe; }
+
+.section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 120px;
+  padding-bottom: 120px; }
+  .section-inner--wide {
+    max-width: 1200px; }
+
+.section-header .section-inner {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.section-hero-image {
+  background-color: #f4f2ff; }
+
+.section-customers .section-inner {
+  padding-top: 60px;
+  padding-bottom: 60px; }
+
+.section-plan-and-manage {
+  background-color: #f5f8ff; }
+
+.section-stats {
+  background-color: #e9EFFF; }
+  .section-stats .section-inner {
+    padding-top: 60px;
+    padding-bottom: 60px; }
+
+.section-blog {
+  background-color: #f5f8ff; }
+
+.section-quotes {
+  background-color: #eaf0ff; }
+
+.section-get-started {
+  background-color: #6888ff; }
+
+.section-newsletter {
+  background-color: #fcfdff; }
+
+.section-footer {
+  border-bottom: 0; }
+  .section-footer .section-inner {
+    padding-top: 60px;
+    padding-bottom: 60px; }
