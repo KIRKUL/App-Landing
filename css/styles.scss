@@ -108,10 +108,13 @@ h6{
 h1,
 h2{
     margin-bottom:$base*7;
-
     font-size: 48px;}
-h3 {font-size: 36px;}
-h4{font-size: 24px;}
+h3 {
+    margin-bottom:$base*7;
+    font-size: 36px;}
+h4{   
+     margin-bottom:$base*7;
+    font-size: 24px;}
 h5{
     @include roboto();
     font-size: 10px;
@@ -352,7 +355,58 @@ span{
 // === /PLAN-AND-MANAGE ===
 
 // === FEATURES ===
-.section-features{}
+.section-features{
+    h4{
+        font-weight: $fw-medium;
+    }
+}
+
+.features-list{
+display: flex;
+//justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    list-style: none;
+
+    &__item{
+        position: relative;
+         flex-basis: 25%;
+        &:not(:first-child){
+            margin-left: 40px;
+        }
+
+         &:not(:first-child)::before{
+             position: absolute;
+             top: 120px;
+             right: -34px;
+             content: '';
+             height: 1px;
+             width: 28px;
+             border-color: #dae4fe;
+         }
+        &-icon{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width:$base*17;
+            height: $base*17;
+            margin: 0 auto $base*8;
+            background-color: #f1f5ff;
+            border-radius:100%;
+        }
+        &-title{
+            margin-bottom: $base*7;
+            font-weight: $fw-bold;
+            font-size: $fs-md;
+            color: #4074f8;
+        }
+        &-text{
+            line-height: 2;
+        }
+    }
+}
+
 // === /FEATURES ===
 
 // === STATS ===

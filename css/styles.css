@@ -62,9 +62,11 @@ h2 {
   font-size: 48px; }
 
 h3 {
+  margin-bottom: 28px;
   font-size: 36px; }
 
 h4 {
+  margin-bottom: 28px;
   font-size: 24px; }
 
 h5 {
@@ -231,6 +233,45 @@ h5 {
 
 .btn-group svg {
   margin-left: 4px; }
+
+.section-features h4 {
+  font-weight: 500; }
+
+.features-list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  list-style: none; }
+  .features-list__item {
+    position: relative;
+    flex-basis: 25%; }
+    .features-list__item:not(:first-child) {
+      margin-left: 40px; }
+    .features-list__item:not(:first-child)::before {
+      position: absolute;
+      top: 120px;
+      right: -34px;
+      content: '';
+      height: 1px;
+      width: 28px;
+      border-color: #dae4fe; }
+    .features-list__item-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 32px;
+      background-color: #f1f5ff;
+      border-radius: 100%; }
+    .features-list__item-title {
+      margin-bottom: 28px;
+      font-weight: 700;
+      font-size: 15px;
+      color: #4074f8; }
+    .features-list__item-text {
+      line-height: 2; }
 
 .section-stats {
   background-color: #e9EFFF; }
