@@ -334,11 +334,14 @@ h5 {
 .section-blog {
   background-color: #f5f8ff; }
 
+.slider-wrapper {
+  margin-bottom: 100px;
+  position: relative; }
+
 .slider-blog {
   margin: 0;
   padding: 0;
   list-style: 0;
-  margin-bottom: 100px;
   border: 1px solid #6b6b6d;
   background-color: #fff;
   box-shadow: 0 15px 50px #eff4ff; }
@@ -356,11 +359,25 @@ h5 {
         display: block;
         position: relative;
         border-radius: 5px;
-        background-color: red;
+        box-shadow: 0 15px 100px #e5ebf8;
         overflow: hidden; }
+        .slider-blog__item-gallery .image-link .loupe {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: block;
+          width: 64px;
+          height: 64px;
+          border-radius: 100%;
+          background: #fff url(../img/icon-loupe.svg) no-repeat 50% 50%;
+          opacity: 0;
+          transition: 0.2s; }
+        .slider-blog__item-gallery .image-link:hover .loupe {
+          opacity: 1; }
         .slider-blog__item-gallery .image-link img {
           width: 100%;
-          height: 100px;
+          height: 100%;
           object-fit: contain; }
         .slider-blog__item-gallery .image-link::before {
           position: absolute;
@@ -392,8 +409,41 @@ h5 {
         line-height: 2;
         margin-bottom: 40px; }
 
+.btn-blog {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url(../img/Vector.svg) no-repeat 50% 50%; }
+  .btn-blog--prev {
+    right: 100%;
+    margin-right: 64px;
+    transform: translateY(-50%); }
+  .btn-blog--next {
+    left: 100%;
+    margin-left: 64px;
+    transform: translateY(-50%) rotate(180deg); }
+
 .section-quotes {
   background-color: #eaf0ff; }
+  .section-quotes .section-inner {
+    display: flex;
+    justify-content: space-between; }
+    .section-quotes .section-inner h3 {
+      font-weight: 500; }
+  .section-quotes__left, .section-quotes__right {
+    flex-basis: 45%; }
+  .section-quotes__left .text {
+    line-height: 2; }
+
+.slider-quotes {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .slider-quotes__item {
+    background-color: #fff;
+    border: 1px solid #d8e3fe; }
 
 .section-get-started {
   background-color: #6888ff; }
