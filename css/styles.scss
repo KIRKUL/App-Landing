@@ -63,7 +63,7 @@ padding-bottom: $padding-vertical;
 .btn{
     @include quicksand();
     box-sizing: border-box;
-
+    display: inline-block;
     font-weight: $fw-bold;
     font-size: $fs-sm;
     margin: 0;
@@ -73,6 +73,7 @@ padding-bottom: $padding-vertical;
     border:1px transparent solid;
 border-radius: 2px;
 transition: $transition;
+white-space: nowrap;
 
 &--primary{
     color: #d2e1ff;
@@ -92,6 +93,13 @@ transition: $transition;
 
     &--secondary {
         color: #fff;
+        background-color: #4c85ff;
+        &:hover {
+            background-color: darken(#4c85ff,5%);
+        }
+    }
+    &--grayscale {
+        color: #738213;
         background-color: #4c85ff;
         &:hover {
             background-color: darken(#4c85ff,5%);
@@ -135,7 +143,7 @@ h5{
     @include roboto();
     font-size: 10px;
     margin-bottom:$base*4;
-
+    text-transform: uppercase;
 }
 
 .ta-c{
@@ -641,7 +649,8 @@ background: url(../img/Vector.svg) no-repeat 50% 50%;
 
 // === QUOTES ===
 .section-quotes{
-    background-color: #eaf0ff;
+    background:linear-gradient(#eaf0ff #f6f9ff);
+
     .section-inner{
         display: flex;
         justify-content: space-between;
@@ -661,15 +670,101 @@ background: url(../img/Vector.svg) no-repeat 50% 50%;
     }
 .slider-quotes{
     @include list-null();
+    margin-bottom: $base*20;
+
     &__item{
+        position: relative;
+        padding: $base*10 $base*17 $base*15;
         background-color: #fff;
-border:1px solid #d8e3fe;
+        border:1px solid #d8e3fe;
+        box-shadow: 0 5px 50px #f3f5fa;
+
+&-text{
+    font-size: $fs-md;
+    line-height: 2;
+    color: #676f95;
+}
+&-photo{
+    $height:$base*15;
+    position: absolute;
+    top: 100%;
+    left:50%;
+    width: $height;
+    height: $height;
+    margin-top:-$height/2;
+    border-radius: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    transform: translateX(-50%);
+}
     }
 }
 // === /QUOTES ===
 
 // === FAQ ===
-.section-faq{}
+.section-faq{
+    h4{
+        font-weight: $fw-medium;
+    }
+}
+.faq-accordion{
+    @include list-null();
+
+    &__item{
+        $parent: &;
+border-bottom: 1px solid #d8e3fe;
+
+&--active{
+    .arrow{
+        stroke: #495274;
+    }
+    #{$parent}-trigger{
+color: #495274;
+font-weight: $fw-bold;    
+&-icon{
+    transform: rotate(0);
+}     
+   }
+    #{$parent}-content{
+display: flex;
+    }
+}
+
+&-trigger{
+    display: flex;
+    padding: $base*4;
+    cursor: pointer;
+
+    &-icon{
+        width: $base*4;
+        text-align: center;
+        margin-right:$base*4;
+        transform: rotate(180deg);
+        .arrow{
+            stroke: #8e9687;
+            //stroke: #495274;
+        }
+    }
+    &-text{
+        font-size: $fs-md;
+    }
+}
+&-content{
+    display: none;
+padding: 0 $base*4  $base*4 $base*12;
+
+    &-text{
+        flex-grow: 1;
+        line-height: 2;
+        font-size: $fs-sm;
+
+    }
+    &-btn{
+        margin-left: $base*15;
+    }
+}
+    }
+}
 // === /FAQ ===
 
 // === GET-STARTED ===
