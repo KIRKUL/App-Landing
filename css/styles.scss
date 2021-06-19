@@ -86,7 +86,7 @@ white-space: nowrap;
     color: #d43f3f;
     background-color: #ffd7d7;
     &:hover{
-        background-color: darken(#ffd7d7,5%);
+        background-color: darken(#fff,5%);
     }
 }
 
@@ -96,6 +96,14 @@ white-space: nowrap;
         background-color: #4c85ff;
         &:hover {
             background-color: darken(#4c85ff,5%);
+        }
+        &-inverted{
+            color: #565f82;
+            background-color: #fff;
+    
+            &:hover{
+                background-color: darken(#fff,5%);
+            }
         }
     }
     &--grayscale {
@@ -111,9 +119,19 @@ white-space: nowrap;
                        // background: #d2e1ff;
 
             &:hover{
-                color: darken(#adb4d2,10%);
-                border: 1px solid darken(#adb4d2,10%);
+                color: darken(#adb4d2, 10%);
+                border: 1px solid darken(#adb4d2, 10%);
 
+            }
+            &-inverted{
+                color: #c7d3ff;
+                border-color: #a0b4ff;
+        
+                &:hover{
+                    color: lighten(#c7d3ff, 10%);
+
+                    border-color: lighten( #a0b4ff, 5%);
+                }
             }
 }
 }
@@ -304,7 +322,7 @@ background-position: 50% 100%;
         font-weight: $fw-medium;
     }
 .text{
-    width: 60%;
+    max-width: 60%;
     margin: 0 auto $base*5;
     line-height: 2;
 }
@@ -769,7 +787,44 @@ padding: 0 $base*4  $base*4 $base*12;
 
 // === GET-STARTED ===
 .section-get-started{
-    background-color: #6888ff;
+    position: relative;
+    background: linear-gradient(#6888ff, #5e80ff);
+    color:#fff;
+    text-align: center;
+
+    &::before{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url(../img/clouds2.svg) no-repeat no-repeat 50% 50%;
+        z-index: 5;
+        content:'';
+    }
+
+.section-inner{
+    position: relative;
+    z-index: 10;
+}
+
+    h2,
+    h5{
+        color:#fff;
+    }
+
+    h2{
+        font-weight: $fw-light;
+        span{
+            font-weight: $fw-medium;
+        }
+    }
+
+    .text{
+        line-height: 2;
+        min-width: 60%;
+        margin: 0 auto $base*10;
+    }
 }
 // === /GET-STARTED ===
 
