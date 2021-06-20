@@ -36,6 +36,7 @@ $color-divider:#d8e3fe;
 $transition: .2s;
 $color-primary:#697ca6;
 $color-secondary:#6188ff;
+$color-white: $color-white;
 
 // ===/ VARIABLES ===
 
@@ -60,6 +61,22 @@ padding-bottom: $padding-vertical;
         max-width: 1200px;
     }
 }
+
+.input{
+    font-size: $fs-sm;
+    padding: $base*3 $base*4;
+    border:1px solid transparent;
+    background: #efeff7;
+    border-radius: $base/2;
+    color:#7a85ad;
+
+    &--size-lg{
+        padding: $base*5 $base*6;
+        border-radius: $base;
+
+    }
+}
+
 .btn{
     @include quicksand();
     box-sizing: border-box;
@@ -69,11 +86,18 @@ padding-bottom: $padding-vertical;
     margin: 0;
     padding: $base*3 $base*4;
     text-decoration: none;
+    cursor: pointer;
     background: none;
     border:1px transparent solid;
-border-radius: 2px;
+border-radius: $base/2;
 transition: $transition;
 white-space: nowrap;
+
+&--size-lg{
+    padding: $base*5 $base*15;
+    border-radius: $base;
+
+}
 
 &--primary{
     color: #d2e1ff;
@@ -86,23 +110,23 @@ white-space: nowrap;
     color: #d43f3f;
     background-color: #ffd7d7;
     &:hover{
-        background-color: darken(#fff,5%);
+        background-color: darken($color-white,5%);
     }
 }
 
 
     &--secondary {
-        color: #fff;
+        color: $color-white;
         background-color: #4c85ff;
         &:hover {
             background-color: darken(#4c85ff,5%);
         }
         &-inverted{
             color: #565f82;
-            background-color: #fff;
+            background-color: $color-white;
     
             &:hover{
-                background-color: darken(#fff,5%);
+                background-color: darken($color-white,5%);
             }
         }
     }
@@ -336,8 +360,8 @@ background-position: 50% 100%;
 width: $base*13;
 height: $base*13;    
 border-radius: 100%;
-background-color: #fff;
-box-shadow: 0 10px 50 rgba(#c9d1e7, .6 );
+background-color: $color-white;
+box-shadow: 0 $base*2 $base*12 rgba(#c9d1e7, .6 );
 svg{
     width:$base*3;
     height: $base*3;
@@ -419,21 +443,25 @@ display: flex;
     list-style: none;
 
     &__item{
+        $margin-left:$base*10;
         position: relative;
          flex-basis: 25%;
+         $divider-width: $base*7;
+
        
          &:not(:first-child){
-            margin-left: 10px;
+            margin-left:  $margin-left;
+
         }
 
          &:not(:first-child)::before{
              position: absolute;
-             top: 120px;
-             right: -34px;
+             top: $base*30;
+             left: -$divider-width - ($margin-left - $divider-width)/2;
              content: '';
              height: 1px;
-             width: 28px;
-             border-color: #dae4fe;
+             width: $divider-width;
+             background-color: #dae4fe;
          }
         &-icon{
             display: flex;
@@ -518,7 +546,7 @@ margin-bottom: $base*7;
 
 &__left  {
     align-items:flex-end;
-    color:#fff;
+    color:$color-white;
     text-align: right;
     background-color: #6888ff;
 }
@@ -543,8 +571,8 @@ margin-bottom: $base*7;
     padding: 0;
     list-style: 0;
     border: 1px solid #6b6b6d;
-    background-color: #fff;
-    box-shadow: 0 15px 50px #eff4ff;
+    background-color: $color-white;
+    box-shadow: 0 $base*3 $base*12 #eff4ff;
     &__item{
         display: flex;
 padding: $base*16 $base*8;
@@ -554,15 +582,15 @@ padding: $base*16 $base*8;
 }
 &-gallery{
     display: grid;
-    grid-template-rows:  repeat(2, 120px);
-    grid-template-columns:repeat(3,120px);
-    grid-gap: 12px;
+    grid-template-rows:  repeat(2, $base*30);
+    grid-template-columns:repeat(3, $base*30);
+    grid-gap: $base*4;
     //flex-wrap: wrap;
     .image-link{
         display: block;
         position: relative;
-        border-radius: 5px;
-        box-shadow: 0 15px 100px #e5ebf8;       
+        border-radius: $base;
+        box-shadow: 0 $base*4 $base*25 #e5ebf8;       
         overflow: hidden;
 
         .loupe{
@@ -574,7 +602,7 @@ padding: $base*16 $base*8;
             width: $base*16;
             height: $base*16;
             border-radius: 100%;
-            background: #fff url(../img/icon-loupe.svg) no-repeat 50% 50%;
+            background: $color-white url(../img/icon-loupe.svg) no-repeat 50% 50%;
             opacity: 0;
             transition: $transition;
         }
@@ -693,9 +721,9 @@ background: url(../img/Vector.svg) no-repeat 50% 50%;
     &__item{
         position: relative;
         padding: $base*10 $base*17 $base*15;
-        background-color: #fff;
+        background-color: $color-white;
         border:1px solid #d8e3fe;
-        box-shadow: 0 5px 50px #f3f5fa;
+        box-shadow: 0 $base $base*12 #f3f5fa;
 
 &-text{
     font-size: $fs-md;
@@ -711,7 +739,7 @@ background: url(../img/Vector.svg) no-repeat 50% 50%;
     height: $height;
     margin-top:-$height/2;
     border-radius: 100%;
-    background-color: #fff;
+    background-color: $color-white;
     overflow: hidden;
     transform: translateX(-50%);
 }
@@ -789,7 +817,7 @@ padding: 0 $base*4  $base*4 $base*12;
 .section-get-started{
     position: relative;
     background: linear-gradient(#6888ff, #5e80ff);
-    color:#fff;
+    color:$color-white;
     text-align: center;
 
     &::before{
@@ -810,7 +838,7 @@ padding: 0 $base*4  $base*4 $base*12;
 
     h2,
     h5{
-        color:#fff;
+        color:$color-white;
     }
 
     h2{
@@ -831,7 +859,43 @@ padding: 0 $base*4  $base*4 $base*12;
 // === NEWSLETTER ===
 .section-newsletter{
     background-color: #fcfdff;
+
+    .section-inner{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__left{
+        flex-basis: 35%;
+&-title{
+    @include quicksand();
+    font-size: $fs-lg;
+    color: #3d4f9f;
+    font-weight: bold;
+    margin-bottom: $base*4;
 }
+&-text{
+    font-size: $fs-md;
+    line-height: 2;
+}
+
+    }
+    &__right{
+        flex-basis: 55%;
+    }
+}
+
+.form-newsletter{
+    display: flex;
+
+    &__input{
+        flex-grow: 1;
+    }
+&__btn{
+        margin-left: $base*4;
+    }
+}
+
 // === /NEWSLETTER ===
 
 //=== FOOTER ===
