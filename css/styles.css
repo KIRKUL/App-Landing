@@ -1,3 +1,4 @@
+@import url("./normalize.css");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap");
 body {
@@ -55,6 +56,10 @@ body {
   .input--size-lg {
     padding: 1.25rem 1.5rem;
     border-radius: 0.25rem; }
+    @media (max-width: 991px) {
+      .input--size-lg {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem; } }
 
 .btn {
   font-family: 'Quicksand', sans-serif;
@@ -175,9 +180,6 @@ h2 {
   clip: rect(0 0 0 0);
   border: 0; }
 
-.section-header {
-  position: relative; }
-
 .main-navigation {
   display: flex;
   align-items: center; }
@@ -186,6 +188,17 @@ h2 {
     flex-grow: 1;
     align-items: center;
     margin-left: 4.5rem; }
+    @media (max-width: 991px) {
+      .section-header .main-navigation__inner-wrap {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        display: none;
+        padding: 1.25rem;
+        margin-left: 0;
+        background-color: #fff; } }
     @media (max-width: 991px) {
       .main-navigation__inner-wrap {
         flex-direction: column; }
@@ -202,20 +215,6 @@ h2 {
       .section-footer .main-navigation .logo {
         margin-bottom: 1rem; } }
 
-.btn-burger {
-  display: none;
-  margin-left: auto; }
-  .btn-burger__line {
-    display: block;
-    height: 0.125rem;
-    width: 1rem;
-    background-color: #aca6a6; }
-    .btn-burger__line + .btn-burger__line {
-      margin-top: 0.25rem; }
-  @media (max-width: 991px) {
-    .btn-burger {
-      display: block; } }
-
 .logo__link {
   display: block;
   background-color: #5e81fe;
@@ -230,6 +229,9 @@ h2 {
   list-style: none; }
   .nav-wrapper__item + .nav-wrapper__item {
     margin-left: 2.5rem; }
+    @media (max-width: 575px) {
+      .nav-wrapper__item + .nav-wrapper__item {
+        margin-left: 0; } }
   .nav-wrapper__item-link {
     font-family: 'Quicksand', sans-serif;
     font-size: 0.75rem;
@@ -242,6 +244,11 @@ h2 {
     .nav-wrapper__item-link--active {
       font-weight: 700;
       color: #6188ff; }
+  @media (max-width: 575px) {
+    .nav-wrapper {
+      flex-direction: column; }
+      .nav-wrapper__item {
+        margin: 0; } }
 
 .socials {
   margin-left: auto; }
@@ -262,6 +269,23 @@ h2 {
 
 .btn-wrapper {
   margin-left: 2.75rem; }
+
+.section-header {
+  position: relative; }
+
+.btn-burger {
+  display: none;
+  margin-left: auto; }
+  .btn-burger__line {
+    display: block;
+    height: 0.125rem;
+    width: 1rem;
+    background-color: #aca6a6; }
+    .btn-burger__line + .btn-burger__line {
+      margin-top: 0.25rem; }
+  @media (max-width: 991px) {
+    .btn-burger {
+      display: block; } }
 
 .section-hero-image {
   position: relative;
@@ -456,6 +480,11 @@ h2 {
     @media (min-width: 992px) {
       .section-stats__text {
         width: 40%; } }
+  .section-stats__left, .section-stats__right {
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    padding: 4rem 5.5rem; }
   .section-stats__left {
     align-items: flex-end;
     color: #fff;
@@ -495,7 +524,8 @@ h2 {
       display: grid;
       grid-template-rows: repeat(2, 7.5rem);
       grid-template-columns: repeat(3, 7.5rem);
-      grid-gap: 1rem; }
+      grid-gap: 1rem;
+      width: 100%; }
       .slider-blog__item-gallery .image-link {
         display: block;
         position: relative;
@@ -520,7 +550,7 @@ h2 {
         .slider-blog__item-gallery .image-link img {
           width: 100%;
           height: 100%;
-          object-fit: contain; }
+          object-fit: cover; }
         .slider-blog__item-gallery .image-link::before {
           position: absolute;
           top: 0;
@@ -535,20 +565,29 @@ h2 {
           .slider-blog__item-gallery .image-link--b::before {
             background: linear-gradient(transparent, #ffc735); }
         .slider-blog__item-gallery .image-link--s-1 {
-          grid-column: 3/4;
-          grid-row: 1/2; }
+          grid-column: 3 / 4;
+          grid-row: 1 / 2; }
           .slider-blog__item-gallery .image-link--s-1::before {
             background: linear-gradient(transparent, #ff3535); }
         .slider-blog__item-gallery .image-link--s-2 {
-          grid-column: 3/4;
-          grid-row: 2/3; }
+          grid-column: 3 / 4;
+          grid-row: 2 / 3; }
           .slider-blog__item-gallery .image-link--s-2::before {
             background: linear-gradient(transparent, #35aaff); }
       @media (max-width: 991px) {
         .slider-blog__item-gallery {
-          grid-template-rows: repeat(2, 6.25rem);
-          grid-template-columns: repeat(3, 6.25rem);
-          grid-gap: 0.5rem; } }
+          grid-template-rows: repeat(1, 1fr);
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 0.5rem; }
+          .slider-blog__item-gallery .image-link--b {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2; }
+          .slider-blog__item-gallery .image-link--s-1 {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2; }
+          .slider-blog__item-gallery .image-link--s-2 {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2; } }
     .slider-blog__item-content {
       flex-grow: 1;
       margin-left: 1.25rem; }
@@ -560,10 +599,13 @@ h2 {
         font-size: 0.9375rem;
         line-height: 2;
         margin-bottom: 2.5rem; }
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
       .slider-blog__item {
+        align-items: flex-start;
         flex-direction: column;
-        padding: 1.5rem 1.5rem; }
+        padding: 1.5rem; }
+        .slider-blog__item-gallery {
+          width: 50%; }
         .slider-blog__item-content {
           position: relative;
           z-index: 5;
@@ -571,6 +613,9 @@ h2 {
           margin-left: 0; }
           .slider-blog__item-content h3 {
             margin-bottom: 0.75rem; } }
+    @media (max-width: 575px) {
+      .slider-blog__item-gallery {
+        width: 100%; } }
 
 .btn-blog {
   position: absolute;
@@ -599,7 +644,7 @@ h2 {
     .section-quotes .section-inner .section-subtitle {
       font-size: 2.25rem;
       font-weight: 500; }
-    @media (max-width: 991px) {
+    @media (max-width: 767px) {
       .section-quotes .section-inner {
         flex-direction: column; } }
   .section-quotes__left, .section-quotes__right {
